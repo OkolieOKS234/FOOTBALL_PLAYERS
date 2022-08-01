@@ -32,4 +32,12 @@ personDetails.insertMany([person1, person2, person3], (err) => {
     console.log("Success");
   }
 });
+
+personDetails.find(function (err, persona) {
+  if (err) {
+    console.log("it was unsucessful");
+  } else {
+    console.log(persona);
+  }
+});
 // save a record
