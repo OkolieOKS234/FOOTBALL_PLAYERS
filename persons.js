@@ -25,19 +25,27 @@ const person3 = new personDetails({
   age: 3,
 });
 
-personDetails.insertMany([person1, person2, person3], (err) => {
-  if (err) {
-    console.log("It didnt log out the various informations");
-  } else {
-    console.log("Success");
-  }
-});
+// Tap into our collection and insert
+
+// personDetails.insertMany([person1, person2, person3], (err) => {
+//   if (err) {
+//     console.log("It didnt log out the various informations");
+//   } else {
+//     console.log("Success");
+//   }
+// });
+
+// find items or a particular item
 
 personDetails.find(function (err, persona) {
+  query = { name: "john" };
   if (err) {
     console.log("it was unsucessful");
   } else {
-    console.log(persona);
+    mongoose.connection.close();
+    persona.forEach((personal) => {
+      console.log(personal.name);
+    });
   }
 });
 // save a record
