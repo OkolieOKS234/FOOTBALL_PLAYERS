@@ -46,8 +46,9 @@ console.log("Success");
 <p>}</p>
 <p>});</p>
 </details>
+
 <details>
-<summary>Validation of the database in mongoose using required, min and max<summary>
+<summary>Validation of the database in mongoose using required, min and max</summary>
 
 <p>const personSchema = new mongoose.Schema({</p>
 // Validation
