@@ -45,3 +45,22 @@ console.log("Updated");
 }
 });
 </details>
+<details>
+<summary>Validation of the database in mongoose using required, min and max<summary>
+
+const personSchema = new mongoose.Schema({
+// Validation
+name: {
+type: String,
+min: 1,
+max: 20,
+required: [true, "Please check your data entry"],
+},
+age: {
+type: Number,
+min: 1,
+max: 150,
+},
+});
+
+</details>
