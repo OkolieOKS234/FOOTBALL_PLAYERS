@@ -4,11 +4,12 @@ mongoose.connect("mongodb://localhost:27017/people");
 
 // Creating our schema file
 const personSchema = new mongoose.Schema({
+  //  Validation
   name: {
     type: String,
     min: 1,
     max: 20,
-    required: true,
+    required: [true, "Please check your data entry"],
   },
   age: {
     type: Number,
@@ -20,15 +21,30 @@ const personSchema = new mongoose.Schema({
 // create a new collection
 const personDetails = new mongoose.model("personDetails", personSchema);
 
-personDetails.find(function (err, persona) {
-  query = { name: "john" };
+// const person = new personDetails({
+//   age: 15,
+// });
+
+// person.save();
+
+// Finding a record
+// personDetails.find(function (err, persona) {
+//   if (err) {
+//     console.log("it was unsucessful");
+//   } else {
+//     mongoose.connection.close();
+//     persona.forEach((personal) => {
+//       console.log(personal.name);
+//     });
+//   }
+// });
+
+personDetails.updateOne({ name: "David" }, { name: "David Okolie" }, (err) => {
   if (err) {
-    console.log("it was unsucessful");
+    console.log("There was an error");
   } else {
-    mongoose.connection.close();
-    persona.forEach((personal) => {
-      console.log(personal.name);
-    });
+    console.log("Updated");
   }
 });
+
 // save a record
