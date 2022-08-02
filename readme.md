@@ -1,7 +1,7 @@
 ##Special commands
 
 <h1>Adding new details to our Database</h1>
-<code>
+<code style="background-color:red">
 const person1 = new personDetails({
   name: "John",
   age: 37,
