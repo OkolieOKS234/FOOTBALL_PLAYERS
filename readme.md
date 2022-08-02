@@ -1,10 +1,14 @@
 ##Special commands
 
 <h1>Adding new details to our Database</h1>
-<code style="background-color:red">
+
+<details>
+
+<summary>Adding a new person</summary>
+<p>
 const person1 = new personDetails({
-  name: "John",
-  age: 37,
+name: "John",
+age: 37,
 });
 
 const person2 = new personDetails({
@@ -16,16 +20,22 @@ name: "Anna",
 age: 3,
 });
 
-// Tap into our collection and insert
+Tap into our collection and insert
 
-// personDetails.insertMany([person1, person2, person3], (err) => {
-// if (err) {
-// console.log("It didnt log out the various informations");
-// } else {
-// console.log("Success");
-// }
-// });
+personDetails.insertMany([person1, person2, person3], (err) => {
+if (err) {
+console.log("It didnt log out the various informations");
+} else {
+console.log("Success");
+}
+});
 
+</p>
+
+</details>
+<details>
+
+<summary>Finding a record of a person</summary>
 // find items or a particular item
 personDetails.updateOne({ name: "David" }, { name: "David Okolie" }, (err) => {
 if (err) {
@@ -34,5 +44,4 @@ console.log("There was an error");
 console.log("Updated");
 }
 });
-
-</code>
+</details>
